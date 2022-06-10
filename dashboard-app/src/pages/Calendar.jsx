@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Schedule } from '@syncfusion/ej2-react-schedule';
+
 
 function Calendar() {
   return (
