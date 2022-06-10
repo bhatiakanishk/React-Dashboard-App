@@ -22,10 +22,12 @@ export const ContextProvider = ({ children }) => {
     const setMode = (e) => {
         setCurrentMode(e.target.value);
         localStorage.setItem('themeMode', e.target.value);
+        setThemeSettings(false)
     }
     const setColor = (e) => {
         setCurrentColor(e.target.value);
         localStorage.setItem('colorMode', e.target.value);
+        setThemeSettings(false)
     }
     return (
         <StateContext.Provider value={{
@@ -37,11 +39,11 @@ export const ContextProvider = ({ children }) => {
             screenSize,
             setScreenSize,
             currentColor,
-            setCurrentColor,
             currentMode,
-            setCurrentMode,
             themeSettings,
-            setThemeSettings
+            setThemeSettings,
+            setMode,
+            setColor
         }}>
             { children }
         </StateContext.Provider>
